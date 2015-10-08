@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Bob’s Entertainment Warehouse Order Form</title>
+		<style>
+
+			table {
+				border-collapse: collapse;
+			}
+
+			th {
+				text-transform: uppercase;
+			}
+
+			table, th, td {
+				padding: 0.5em;
+			}
+
+			tr:nth-child(2n+3) {
+				background: #f2f2f2;
+			}
+
+		</style>
+	</head>
+	<body>
+		<h1>Bob’s Entertainment Warehouse Order Form</h1>
+		<form action="bizal.program5.php" method="post">
+			<b>Name<span style="color: red;">*</span>:</b> <input type="text" name="name"><br />
+			<br />
+			<table>
+				<tr>
+					<th>Select</th>
+					<th>ID</th>
+					<th>Author</th>
+					<th>Title</th>
+					<th>Media</th>
+					<th>Feature</th>
+				</tr>
+				<tr><td><input type="checkbox" name=id[] value=185296246 /></td><td>185296246</td><td>John Belushi, Tim Mathinson</td><td>Animal House</td><td>VHS</td><td>Delta fraternity</td></tr>
+				<tr><td><input type="checkbox" name=id[] value=197641935 /></td><td>197641935</td><td>Bette Midler, Goldie Hawn, Dia</td><td>First Wives Club</td><td>VHS</td><td>Don't get mad, Get everything</td></tr>
+				<tr><td><input type="checkbox" name=id[] value=209987624 /></td><td>209987624</td><td>Elton John</td><td>Lion King</td><td>VHS</td><td>Circle of Life</td></tr>
+				<tr><td><input type="checkbox" name=id[] value=222333313 /></td><td>222333313</td><td>Simba</td><td>Lion King II, Simba</td><td>VHS</td><td>Return to Pride Rock</td></tr>
+				<tr><td><input type="checkbox" name=id[] value=234679002 /></td><td>234679002</td><td>O'Riondan</td><td>Cranberries Live</td><td>VHS</td><td>Linger</td></tr>
+				<tr><td><input type="checkbox" name=id[] value=494938311 /></td><td>494938311</td><td>John Belushi, Tim Mathinson</td><td>Animal Barn</td><td>DVD</td><td>Delta fraternity</td></tr>
+				<tr><td><input type="checkbox" name=id[] value=494938314 /></td><td>494938314</td><td>Bette Midler, Goldie Hawn, Dia</td><td>Last Wives Club</td><td>DVD</td><td>Don't get mad, Get everything</td></tr>
+				<tr><td><input type="checkbox" name=id[] value=494938317 /></td><td>494938317</td><td>Elton John</td><td>Lyin King</td><td>DVD</td><td>Circle of Life</td></tr>
+				<tr><td><input type="checkbox" name=id[] value=494938320 /></td><td>494938320</td><td>Simba</td><td>Lyin King 2</td><td>DVD</td><td>Return to Pride Rock</td></tr>
+				<tr><td><input type="checkbox" name=id[] value=494938323 /></td><td>494938323</td><td>O'Riondan</td><td>Cranberries Crushed</td><td>DVD</td><td>Linger</td></tr>
+				<tr><td><input type="checkbox" name=id[] value=494938326 /></td><td>494938326</td><td>David Gilmour</td><td>Pulse</td><td>DVD</td><td>Wish you were here</td></tr>
+				<tr><td><input type="checkbox" name=id[] value=494938329 /></td><td>494938329</td><td>Stevie Nicks</td><td>Stevie, Live at Red</td><td>DVD</td><td>Dreams</td></tr>
+				<tr><td><input type="checkbox" name=id[] value=911111111 /></td><td>911111111</td><td>David Gilmour</td><td>Heartbeat</td><td>VHS</td><td>Wish you were here</td></tr>
+				<tr><td><input type="checkbox" name=id[] value=911111112 /></td><td>911111112</td><td>Stevie Nicks</td><td>Stevie, Taped at Red</td><td>VHS</td><td>Dreams</td></tr>
+			</table><br />
+			<b>Bob’s Rewards Club Member Status:</b>
+			<input type="radio" name="member_status" value="current">Current Member
+			<input type="radio" name="member_status" value="interested">Interested
+			<input type="radio" name="member_status" value="not_interested">Not Interested<br />
+			<br />
+			<b>E-mail Address:</b> <input type="text" name="email"><br />
+			<br />
+			<b>Gender:</b> <select name="gender">
+				<option></option>
+				<option value="male">Male</option>
+				<option value="female">Female</option>
+			</select><br />
+			<br />
+			<button type="submit" value="Submit">Submit</button>
+  			<button type="reset" value="Reset">Reset</button>
+		</form>
+		<p><span style="color: red;">*</span> denotes a required field.</p>
+	</body>
+</html>

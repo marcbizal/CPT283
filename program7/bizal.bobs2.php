@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>Bob’s Entertainment SuperSite Request Summary</title>
+		<title>Bob’s Entertainment SuperSite Order Summary</title>
 		<link rel="stylesheet" href="styles.css">
 	</head>
 	<body>
@@ -12,25 +12,12 @@
 			// DESCRIPTION: Invites the customer to make their final selections
 			//				for the items they wish to purchase.
 
-			include "serverdetails.php";
 			include "utilities.php";
-
-			if ($_SERVER["REQUEST_METHOD"] == "POST")
-			{
-				extract($_POST);
-
-				if (!empty($department))
-				{
-					$link = establishConnectionToDB("cpt283db");
-				}
-				else
-				{
-					die("You must select a department! Please hit back in your browser to return to the form.");
-				}
-			}
+			include "setup.php";
 		?>
-		<h1>Bob’s Entertainment SuperSite <?php echo $department; ?> Department Summary</h1>
-		<form action="bizal.bobs2.php" method="post">
+		<h1>Bob’s Entertainment SuperSite <?php echo $department; ?> Order Summary</h1>
+		<p>Please confirm your order below by checking the boxes next to the items you wish to purchase.</p>
+		<form action="bizal.bobs3.php" method="post">
 			<?php
 				$id_str = implode(",", $ID);
 
@@ -55,7 +42,7 @@ SQL;
 			?>
 			<br/>
 			<input type="hidden" name="department" value="<? echo $department; ?>">
-			<button type="submit" value="Submit">Submit</button>
+			<button type="submit" value="Submit">Order</button>
 			<button type="reset" value="Reset">Reset</button>
 		</form>
 	</body>

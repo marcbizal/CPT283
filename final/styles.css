@@ -1,0 +1,17 @@
+/* TABLE STYLES */
+
+table {
+	border-collapse: collapse;
+}
+
+th {
+	text-transform: uppercase;
+}
+
+table, th, td {
+	padding: 0.5em;
+}
+
+tr:nth-child(2n+3) {
+	background: #f2f2f2;
+}

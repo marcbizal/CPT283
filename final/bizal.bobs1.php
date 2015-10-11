@@ -5,7 +5,7 @@
 	<title>Bob’s Entertainment Universe Department Select</title>
 </head>
 <body>
-	<form action="bizal.bobs1.php" method="post">
+	<form action="bizal.bobs2.php" method="post">
 		<?php
 			// FILENAME: 	bizal.bobs1.php
 			// AUTHOR: 		Marcus Bizal

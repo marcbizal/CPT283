@@ -1,17 +1,33 @@
 /* TABLE STYLES */
 
+* {
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
 table {
-	border-collapse: collapse;
+	min-width: 500px;
+	border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 th {
+	text-align: left;
 	text-transform: uppercase;
 }
 
-table, th, td {
+th, td {
 	padding: 0.5em;
 }
 
 tr:nth-child(2n+3) {
-	background: #f2f2f2;
+	background: rgba(0, 0, 0, 0.1);
+}
+
+fieldset {
+	padding: 1em;
+    border: 1px solid #000;
+	line-height: 2em;
+}
+
+legend {
+	color: #000;
 }

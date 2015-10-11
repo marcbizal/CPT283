@@ -7,17 +7,22 @@
 	</head>
 	<body>
 		<?php
-			// FILENAME: 	bizal.bobs2.php
+			// FILENAME: 	bizal.bobs3.php
 			// AUTHOR: 		Marcus Bizal
 			// DESCRIPTION: Invites the customer to make their final selections
 			//				for the items they wish to purchase.
 
 			include "utilities.php";
-			include "setup.php";
+			include "serverdetails.php";
+
+			verifyPOST("department");
+			extract($_POST);
+
+			$link = establishConnectionToDB("cpt283db");
 		?>
 		<h1>Bob’s Entertainment Universe <?php echo $department; ?> Order Summary</h1>
 		<p>Please confirm your order below by checking the boxes next to the items you wish to purchase.</p>
-		<form action="bizal.bobs3.php" method="post">
+		<form action="bizal.bobs4.php" method="post">
 			<?php
 				$id_str = implode(",", $ID);
 
@@ -28,7 +33,8 @@ FROM products
 INNER JOIN prodinv
 ON products.ID = prodinv.ID
 WHERE products.department = "{$department}"
-AND products.ID IN ({$id_str});
+AND products.ID IN ({$id_str})
+ORDER BY products.entertainerauthor;
 SQL;
 
 				createTableFromSQLResults(

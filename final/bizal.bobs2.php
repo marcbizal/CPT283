@@ -7,7 +7,7 @@
 	</head>
 	<body>
 		<?php
-			// FILENAME: 	bizal.bobs1.php
+			// FILENAME: 	bizal.bobs2.php
 			// AUTHOR: 		Marcus Bizal
 			// DESCRIPTION: This program takes a post request and
 			//				creates a dynamic formatted list
@@ -16,13 +16,18 @@
 			//				a selection for ordering.
 
 			include "utilities.php";
-			include "setup.php";
+			include "serverdetails.php";
+
+			verifyPOST("department");
+			extract($_POST);
+			
+			$link = establishConnectionToDB("cpt283db");
 		?>
 		<h1>Bob’s Entertainment Universe <? echo $department; ?> Department Listings</h1>
 		<p>Please check the boxes next to items below to add them to your cart where you can see more info</p>
-		<form action="bizal.bobs2.php" method="post">
+		<form action="bizal.bobs3.php" method="post">
 			<?php
-						$query = "SELECT ID, entertainerauthor, title, media, feature FROM products WHERE department = \"$department\"";
+						$query = "SELECT ID, entertainerauthor, title, media, feature FROM products WHERE department = \"$department\" ORDER BY entertainerauthor;";
 						createTableFromSQLResults(
 													array("Select", "ID", "Entertainer/Author", "Title", "Media", "Feature"),
 													mysqli_query($link, $query),

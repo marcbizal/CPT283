@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Bob’s Entertainment Universe Department Listings</title>
-		<link rel="stylesheet" href="styles.css">
+		<link rel="stylesheet" href="css/styles.css">
 	</head>
 	<body>
 		<?php
@@ -20,11 +20,11 @@
 
 			verifyPOST("department");
 			extract($_POST);
-			
+
 			$link = establishConnectionToDB("cpt283db");
 		?>
 		<h1>Bob’s Entertainment Universe <? echo $department; ?> Department Listings</h1>
-		<p>Please check the boxes next to items below to add them to your cart where you can see more info</p>
+		<p>Please check the boxes next to items below to add them to your cart where you can see more info.</p>
 		<form action="bizal.bobs3.php" method="post">
 			<?php
 						$query = "SELECT ID, entertainerauthor, title, media, feature FROM products WHERE department = \"$department\" ORDER BY entertainerauthor;";

@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Bob’s Entertainment Universe Order Summary</title>
-		<link rel="stylesheet" href="styles.css">
+		<link rel="stylesheet" href="css/styles.css">
 	</head>
 	<body>
 		<?php
@@ -20,7 +20,7 @@
 
 			$link = establishConnectionToDB("cpt283db");
 		?>
-		<h1>Bob’s Entertainment Universe <?php echo $department; ?> Order Summary</h1>
+		<h1>Bob’s Entertainment Universe <?php echo $department; ?> Order Details</h1>
 		<p>Please confirm your order below by checking the boxes next to the items you wish to purchase.</p>
 		<form action="bizal.bobs4.php" method="post">
 			<?php
@@ -48,7 +48,7 @@ SQL;
 			?>
 			<br/>
 			<input type="hidden" name="department" value="<? echo $department; ?>">
-			<button type="submit" value="Submit">Order</button>
+			<button type="submit" value="Submit">Confirm</button>
 			<button type="reset" value="Reset">Reset</button>
 		</form>
 	</body>

@@ -4,7 +4,7 @@
 	// DESCRIPTION: This file contains various utility functions for use throughout
 	//				Bob’s Entertainment Universe.
 
-	function cc_format($cc)
+	function format_cc($cc)
 	{
 		$cc_len = strlen($cc);
 		if ($cc_len == 16)
@@ -18,7 +18,7 @@
 			return $formatted_cc;
 		}
 		else {
-			print("Error: invalid credit card only contains " . $cc_len . " digits.");
+			return "Error: invalid credit card only contains " . $cc_len . " digits.";
 		}
 	}
 
@@ -31,7 +31,7 @@
 		return $str;
 	}
 
-	function money_format($number)
+	function format_money($number)
 	{
 		return '$' . number_format((double)$number, 2, '.', ',');
 	}
@@ -75,7 +75,7 @@
 					print(wrapWithTag("td", getCheckbox($key . "[]", $value)));
 				}
 
-				print(wrapWithTag("td", in_array($key, $formatted) ? money_format($value) : $value));
+				print(wrapWithTag("td", in_array($key, $formatted) ? format_money($value) : $value));
 			}
 
 			print("</tr>");
@@ -97,7 +97,7 @@
 		$query = "SELECT SUM(UnitPrice) AS total FROM prodinv WHERE ID IN ($id_str);";
 		$order_total = mysqli_fetch_assoc(mysqli_query($link, $query))["total"];
 
-		print(wrapWithTag("h2", "Order total: " . money_format($order_total)));
+		print(wrapWithTag("h2", "Order total: " . format_money($order_total)));
 	}
 
 	function verifyPOST($required)

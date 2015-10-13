@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Bob’s Entertainment Universe Order Total</title>
-		<link rel="stylesheet" href="styles.css">
+		<link rel="stylesheet" href="css/styles.css">
 	</head>
 	<body>
 		<?php
@@ -20,8 +20,8 @@
 
 			$link = establishConnectionToDB("cpt283db");
 		?>
-		<h1>Bob’s Entertainment Universe <? echo $department; ?> Order Total</h1>
-		<p>Thank you for shopping on Bob’s Entertainment Universe, we appreciate your business!</p>
+		<h1>Bob’s Entertainment Universe <? echo $department; ?> Order Form</h1>
+		<p>Please complete the form below, and click finish to complete your order.</p>
 		<?php
 			$id_str = implode(",", $ID);
 			createReceiptForIDs($link, $id_str);

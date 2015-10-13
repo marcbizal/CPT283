@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Bob’s Entertainment Universe Department Select</title>
+	<link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 	<form action="bizal.bobs2.php" method="post">
